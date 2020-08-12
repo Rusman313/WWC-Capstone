@@ -1,8 +1,8 @@
-package com.win.personality_quiz.Repository;
+package com.win.personality_quiz.repository;
 
 import java.util.List;
 
-import com.win.personality_quiz.Model.Home;
+import com.win.personality_quiz.model.Home;
 
 import org.springframework.data.repository.CrudRepository;
 

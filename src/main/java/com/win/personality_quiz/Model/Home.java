@@ -1,4 +1,4 @@
-package com.win.personality_quiz.Model;
+package com.win.personality_quiz.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,12 +10,12 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="home")
+@Table(name = "home")
 
 public class Home {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String username;
+    private String userName;
 
 }
