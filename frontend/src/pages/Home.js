@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AppNav from "./AppNav";
+import AppNav from "../components/AppNav";
 class Home extends Component {
   state = {};
   render() {

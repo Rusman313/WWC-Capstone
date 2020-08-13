@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import Quiz from "./Quiz";
-import Home from "./Home";
-import Results from "./Results";
+import Quiz from "./pages/Quiz";
+import Home from "./pages/Home";
+import Results from "./pages/Results";
 class App extends Component {
   state = {};
   render() {

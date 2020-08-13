@@ -17,7 +17,12 @@ class AppNav extends Component {
             <Typography edge="start" variant="h6" style={{ flexGrow: 1 }}>
               Personality Quiz
             </Typography>
-            <Button color="inherit" component={Link} to="/quiz">
+            <Button
+              color="inherit"
+              varient="outlined"
+              component={Link}
+              to="/quiz"
+            >
               Take Quiz
             </Button>
           </Toolbar>
