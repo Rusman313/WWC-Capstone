@@ -14,10 +14,19 @@ public class Quiz {
 
     private String question;
 
+    // Zach
     private String answer1;
+
+    // Lionel
     private String answer2;
+
+    // George
     private String answer3;
+
+    // Kaley
     private String answer4;
+
+    // Pasha
     private String answer5;
 
     public Quiz() {

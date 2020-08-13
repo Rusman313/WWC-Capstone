@@ -1,5 +1,15 @@
 import React, { Component } from "react";
 import QuizService from "../services/QuizService";
+import {
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+  FormControl,
+  FormHelperText,
+  FormLabel,
+  Button,
+  makeStyles,
+} from "@material-ui/core";
 
 class QuizComponent extends Component {
   state = {};
@@ -22,32 +32,50 @@ class QuizComponent extends Component {
     return (
       <div>
         <h1>Questions List</h1>
-        <table>
-          <thead>
-            <tr>
-              <td>Quiz ID</td>
-              <td>Quiz Question</td>
-              <td>Answer</td>
-              <td>Answer</td>
-              <td>Answer</td>
-              <td>Answer</td>
-              <td>Answer</td>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.quiz.map((question) => (
-              <tr key={question.id}>
-                <td>{question.id}</td>
-                <td>{question.question}</td>
-                <td>{question.answer1}</td>
-                <td>{question.answer2}</td>
-                <td>{question.answer3}</td>
-                <td>{question.answer4}</td>
-                <td>{question.answer5}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+
+        <div>
+          {this.state.quiz.map((question) => (
+            <div style={{ flexGrow: 1 }}>
+              <FormControl component="fieldset">
+                <FormLabel variant="h6" component="legend">
+                  {question.question}
+                </FormLabel>
+                <RadioGroup
+                  aria-label="answer"
+                  name="answer"
+                  //   value={value}
+                  //   onChange={handleChange}
+                >
+                  <FormControlLabel
+                    value={question.answer1}
+                    control={<Radio />}
+                    label={question.answer1}
+                  />
+                  <FormControlLabel
+                    value={question.answer2}
+                    control={<Radio />}
+                    label={question.answer2}
+                  />
+                  <FormControlLabel
+                    value={question.answer3}
+                    control={<Radio />}
+                    label={question.answer3}
+                  />
+                  <FormControlLabel
+                    value={question.answer4}
+                    control={<Radio />}
+                    label={question.answer4}
+                  />
+                  <FormControlLabel
+                    value={question.answer5}
+                    control={<Radio />}
+                    label={question.answer5}
+                  />
+                </RadioGroup>
+              </FormControl>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
