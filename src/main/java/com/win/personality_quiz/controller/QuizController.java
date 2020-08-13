@@ -19,9 +19,6 @@ public class QuizController {
     @Autowired
     private QuizRepo quizRepo;
 
-    // @Autowired
-    // private QuizService quizService;
-
     @GetMapping("questions")
     public Collection<Quiz> getQuestions() {
         return quizRepo.findAll();

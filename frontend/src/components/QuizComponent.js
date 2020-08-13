@@ -27,12 +27,23 @@ class QuizComponent extends Component {
             <tr>
               <td>Quiz ID</td>
               <td>Quiz Question</td>
+              <td>Answer</td>
+              <td>Answer</td>
+              <td>Answer</td>
+              <td>Answer</td>
+              <td>Answer</td>
             </tr>
           </thead>
           <tbody>
             {this.state.quiz.map((question) => (
               <tr key={question.id}>
+                <td>{question.id}</td>
                 <td>{question.question}</td>
+                <td>{question.answer1}</td>
+                <td>{question.answer2}</td>
+                <td>{question.answer3}</td>
+                <td>{question.answer4}</td>
+                <td>{question.answer5}</td>
               </tr>
             ))}
           </tbody>

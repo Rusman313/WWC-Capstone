@@ -20,7 +20,7 @@ public class QuizApp implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		this.quizRepo.save(new Quiz("Are you ready for a raise?"));
+		this.quizRepo.save(new Quiz("Are you ready for a raise?", "1", "2", "3", "4", "5"));
 	}
 
 }
