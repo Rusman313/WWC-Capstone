@@ -75,6 +75,9 @@ class QuizComponent extends Component {
               </FormControl>
             </div>
           ))}
+          <Button variant="contained" color="primary" type="submit">
+            Submit
+          </Button>
         </div>
       </div>
     );
