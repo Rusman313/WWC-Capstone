@@ -10,30 +10,32 @@ class UserComponent extends Component {
 
   constructor(props) {
     super(props);
-    this.state = this.initialState;
-    this.state.show = false;
+    this.state = {
+      name: "",
+    };
+
     this.userChange = this.userChange.bind(this);
     this.submitUser = this.submitUser.bind(this);
   }
 
-  initialState = { name: "" };
-
-  resetUser = () => {
-    this.setState(() => this.initialState);
-  };
-
-  submitUser = (event) => {
-    event.preventDefault();
+  submitUser = () => {
     const user = { name: this.state.name };
     axios.post("http://localhost:8080/user/", user);
-    this.setState(this.initialState);
   };
 
   userChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({ name: event.target.value });
   };
+
   userList = () => {
     return this.props.history.push("names");
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.submitUser();
+    console.log(this.state.name);
+    this.setState({ name: "" });
   };
 
   render() {
@@ -47,26 +49,28 @@ class UserComponent extends Component {
               <Grid item>
                 <AccountCircleRounded />
               </Grid>
-              <Grid item onReset={this.resetUser} onSubmit={this.submitUser}>
-                <TextField
-                  id="input-with-icon-grid"
-                  label="Username"
-                  value={name}
-                  onChange={this.userChange}
-                />
-              </Grid>
-              <Grid item>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  size="small"
-                  onClick={this.handleSubmit}
-                  component={Link}
-                  to="/quiz"
-                >
-                  Take Quiz
-                </Button>
-              </Grid>
+              <form onSubmit={this.handleSubmit}>
+                <Grid item onReset={this.resetUser}>
+                  <TextField
+                    id="input-with-icon-grid"
+                    label="Username"
+                    value={this.state.name}
+                    onChange={this.userChange}
+                  />
+                </Grid>
+                <Grid item>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    size="small"
+                    onClick={this.handleSubmit}
+                    component={Link}
+                    to="/quiz"
+                  >
+                    Take Quiz
+                  </Button>
+                </Grid>
+              </form>
             </Grid>
           </div>
         </div>

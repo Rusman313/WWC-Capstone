@@ -6,17 +6,29 @@ import {
   CardContent,
   Typography,
 } from "@material-ui/core";
+import { withStyles } from "@material-ui/styles";
+
+const useStyles = () => ({
+  root: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 140,
+  },
+});
 
 class ResultsComponent extends Component {
   state = {};
 
   render() {
+    const { classes } = this.props;
     return (
       <div>
         <div className="kaley">
-          <Card>
+          <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
+                className={classes.media}
                 component="img"
                 height="300"
                 image={require("../images/kaley.png")}
@@ -36,4 +48,4 @@ class ResultsComponent extends Component {
   }
 }
 
-export default ResultsComponent;
+export default withStyles(useStyles)(ResultsComponent);
