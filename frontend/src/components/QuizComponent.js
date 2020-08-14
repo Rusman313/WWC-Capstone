@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import QuizService from "../services/QuizService";
 import {
   Radio,
@@ -75,7 +76,12 @@ class QuizComponent extends Component {
               </FormControl>
             </div>
           ))}
-          <Button variant="contained" color="primary" type="submit">
+          <Button
+            variant="contained"
+            color="primary"
+            component={Link}
+            to="/results"
+          >
             Submit
           </Button>
         </div>
