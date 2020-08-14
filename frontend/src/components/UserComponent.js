@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { Grid, TextField, Button } from "@material-ui/core";
 import { AccountCircleRounded } from "@material-ui/icons";
+import UserService from "../services/UserService";
 
 class UserComponent extends Component {
   state = {};
@@ -13,33 +14,42 @@ class UserComponent extends Component {
       name: "",
     };
 
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.userChange = this.userChange.bind(this);
-    this.submitUser = this.submitUser.bind(this);
+    // this.submitUser = this.submitUser.bind(this);
   }
 
-  submitUser = () => {
-    const user = { name: this.state.name };
-    axios.post("http://localhost:8080/user/", user);
-  };
+  // submitUser = () => {
+  //   const user = { name: this.state.name };
+  //   axios.post("http://localhost:8080/user/", user);
+  //   let name = this.state;
+  //   UserService.createUserNames(name).then((response) => {
+  //     this.props.history.push("names");
+  //   });
+  // };
+
+  // using this yt video https://www.youtube.com/watch?v=ieMhlyjPjWo
 
   userChange = (event) => {
     this.setState({ name: event.target.value });
   };
 
-  userList = () => {
-    return this.props.history.push("names");
-  };
+  // userList = () => {
+  //   return this.props.history.push("names");
+  // };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.submitUser();
-    console.log(this.state.name);
+    let name = this.state.name;
+    UserService.createUserNames(name).then((response) => {
+      this.props.history.push("names");
+    });
     this.setState({ name: "" });
+    console.log(this.state.name);
   };
 
   render() {
     const { classes } = this.props;
-    const { name } = this.state;
 
     return (
       <div>
