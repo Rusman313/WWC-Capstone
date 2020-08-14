@@ -1,63 +1,77 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import UserService from "../services/UserService";
+import axios from "axios";
 import { Grid, TextField, Button } from "@material-ui/core";
 import { AccountCircleRounded } from "@material-ui/icons";
 
 class UserComponent extends Component {
   state = {};
 
-  //   constructor(props) {
-  //     super(props);
-  //     this.handleSubmit = this.handleSubmit.bind(this);
-  //   };
+  constructor(props) {
+    super(props);
+    this.state = this.initialState;
+    this.state.show = false;
+    this.userChange = this.userChange.bind(this);
+    this.submitUser = this.submitUser.bind(this);
+  }
 
-  //   handleSubmit(e) {
-  //     e.preventDefault();
-  //     const newUser = [];
-  //     this.props.attributes.forEach(attribute => {
-  //         newUser[attribute] =
-  //         ReactDOM.findDOMNode(this.refs[attribute]).value.trim();
-  //     });
-  //     this.props.onCreate(newUser);
+  initialState = { name: "" };
 
-  //     // clear out the dialog's input
-  //     this.props.attributes.forEach(attribute => {
-  //         ReactDOM.findDOMNode(this.refs[attribute]).value = '';
-  //     });
+  resetUser = () => {
+    this.setState(() => this.initialState);
+  };
 
-  //     // navigate away from the dialog to hide it
-  //     window.location = '#';
-  //     }
-  //   };
+  submitUser = (event) => {
+    event.preventDefault();
+    const user = { name: this.state.name };
+    axios.post("http://localhost:8080/user/", user);
+    this.setState(this.initialState);
+  };
+
+  userChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+  userList = () => {
+    return this.props.history.push("names");
+  };
 
   render() {
-    return (
-      <div>
+    {
+      const { name } = this.state;
+
+      return (
         <div>
-          <Grid container spacing={1} alignItems="flex-end">
-            <Grid item>
-              <AccountCircleRounded />
+          <div>
+            <Grid container spacing={1} alignItems="flex-end">
+              <Grid item>
+                <AccountCircleRounded />
+              </Grid>
+              <Grid item onReset={this.resetUser} onSubmit={this.submitUser}>
+                <TextField
+                  id="input-with-icon-grid"
+                  label="Username"
+                  value={name}
+                  onChange={this.userChange}
+                />
+              </Grid>
+              <Grid item>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  size="small"
+                  onClick={this.handleSubmit}
+                  component={Link}
+                  to="/quiz"
+                >
+                  Take Quiz
+                </Button>
+              </Grid>
             </Grid>
-            <Grid item>
-              <TextField id="input-with-icon-grid" label="Username" />
-            </Grid>
-            <Grid item>
-              <Button
-                variant="contained"
-                color="primary"
-                size="small"
-                onClick={this.handleSubmit}
-                component={Link}
-                to="/quiz"
-              >
-                Take Quiz
-              </Button>
-            </Grid>
-          </Grid>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
 

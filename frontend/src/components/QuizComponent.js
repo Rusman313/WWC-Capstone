@@ -29,7 +29,6 @@ class QuizComponent extends Component {
   }
 
   render() {
-    console.log(this.state.quiz);
     return (
       <div>
         <h1>Questions List</h1>

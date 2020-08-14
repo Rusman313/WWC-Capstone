@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("user")
+@RequestMapping("user/")
 @CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
 
     @Autowired
     private UserRepo userRepo;
 
-    @GetMapping("name")
+    @GetMapping("names")
     public Collection<User> getUserNames() {
         return userRepo.findAll();
     }
