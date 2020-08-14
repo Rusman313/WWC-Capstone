@@ -6,10 +6,8 @@ import {
   RadioGroup,
   FormControlLabel,
   FormControl,
-  FormHelperText,
   FormLabel,
   Button,
-  makeStyles,
 } from "@material-ui/core";
 
 class QuizComponent extends Component {

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import UserService from "../services/UserService";
 import axios from "axios";
 import { Grid, TextField, Button } from "@material-ui/core";
 import { AccountCircleRounded } from "@material-ui/icons";
@@ -39,43 +38,43 @@ class UserComponent extends Component {
   };
 
   render() {
-    {
-      const { name } = this.state;
+    const { classes } = this.props;
+    const { name } = this.state;
 
-      return (
+    return (
+      <div>
         <div>
-          <div>
+          <form onSubmit={this.handleSubmit}>
             <Grid container spacing={1} alignItems="flex-end">
               <Grid item>
                 <AccountCircleRounded />
               </Grid>
-              <form onSubmit={this.handleSubmit}>
-                <Grid item onReset={this.resetUser}>
-                  <TextField
-                    id="input-with-icon-grid"
-                    label="Username"
-                    value={this.state.name}
-                    onChange={this.userChange}
-                  />
-                </Grid>
-                <Grid item>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    size="small"
-                    onClick={this.handleSubmit}
-                    component={Link}
-                    to="/quiz"
-                  >
-                    Take Quiz
-                  </Button>
-                </Grid>
-              </form>
+
+              <Grid item onReset={this.resetUser}>
+                <TextField
+                  id="input-with-icon-grid"
+                  label="Username"
+                  value={this.state.name}
+                  onChange={this.userChange}
+                />
+              </Grid>
+              <Grid item>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  size="small"
+                  onClick={this.handleSubmit}
+                  component={Link}
+                  to="/quiz"
+                >
+                  Take Quiz
+                </Button>
+              </Grid>
             </Grid>
-          </div>
+          </form>
         </div>
-      );
-    }
+      </div>
+    );
   }
 }
 
