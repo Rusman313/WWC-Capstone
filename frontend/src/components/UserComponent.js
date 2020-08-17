@@ -59,7 +59,6 @@ class UserComponent extends Component {
               <Grid item>
                 <AccountCircleRounded />
               </Grid>
-
               <Grid item onReset={this.resetUser}>
                 <TextField
                   id="input-with-icon-grid"

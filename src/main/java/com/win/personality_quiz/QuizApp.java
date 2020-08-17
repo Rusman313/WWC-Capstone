@@ -25,7 +25,7 @@ public class QuizApp implements CommandLineRunner {
 		this.quizRepo.save(new Quiz("What Quality Is Most Attractive to You?", "Sense of humor", "Intelligence",
 				"Thoughtfulness", "Great communication skills", "People who are unapologetically themselves"));
 		this.quizRepo.save(new Quiz("What Is Your Karaoke Song?", "Mr. Brightside - The Killers",
-				"Total Eclipse of The Heart - Bonie Tyler", "Summer Lovin' - Grease", "Fat Lip - Sum 41",
+				"Total Eclipse of The Heart - Bonnie Tyler", "Summer Lovin' - Grease", "Fat Lip - Sum 41",
 				"Cheeseburger in Paradise - Jimmy Buffett"));
 		this.quizRepo.save(new Quiz("How Do You Celebrate Your Birthday?", "Dinner out", "Eating",
 				"A vacation with my significant other", "A party with close friends and family", "With close friends"));
