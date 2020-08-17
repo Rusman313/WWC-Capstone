@@ -48,16 +48,14 @@ class Zach extends Component {
               ></CardMedia>
               <CardContent>
                 <Typography variant="h5" component="h2">
-                  You're like Zach!
+                  You got Zach!
                 </Typography>
                 <Typography>
-                  {" "}
-                  blurbblurbblurbblurbblurbblurbblurb
+                  Zach would be more likely to enjoy
                   <br />
-                  blurbblurbblurbblurbblurbblurb
+                  a long walk at Hogwarts
                   <br />
-                  blurbblurbblurbblurbblurbblurbblurbblurbblurb
-                  <br />
+                  than at the beach. But doesn't like costumes...
                 </Typography>
               </CardContent>
             </CardActionArea>

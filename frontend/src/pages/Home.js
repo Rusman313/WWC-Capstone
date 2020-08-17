@@ -37,7 +37,9 @@ class Home extends Component {
                 ></CardMedia>
                 <CardContent>
                   <Typography variant="h5" component="h2">
-                    Pasha
+                    <center>
+                      <b>Pasha</b>
+                    </center>
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -52,7 +54,9 @@ class Home extends Component {
                 ></CardMedia>
                 <CardContent>
                   <Typography variant="h5" component="h2">
-                    Zach
+                    <center>
+                      <b>Zach</b>
+                    </center>
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -67,7 +71,9 @@ class Home extends Component {
                 ></CardMedia>
                 <CardContent>
                   <Typography variant="h5" component="h2">
-                    Lionel
+                    <center>
+                      <b>Lionel</b>
+                    </center>
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -88,7 +94,9 @@ class Home extends Component {
                   ></CardMedia>
                   <CardContent>
                     <Typography variant="h5" component="h2">
-                      George
+                      <center>
+                        <b>George</b>
+                      </center>
                     </Typography>
                   </CardContent>
                 </CardActionArea>
@@ -103,7 +111,9 @@ class Home extends Component {
                   ></CardMedia>
                   <CardContent>
                     <Typography variant="h5" component="h2">
-                      Kaley
+                      <center>
+                        <b>Kaley</b>
+                      </center>
                     </Typography>
                   </CardContent>
                 </CardActionArea>

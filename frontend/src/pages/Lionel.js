@@ -48,15 +48,14 @@ class Lionel extends Component {
               ></CardMedia>
               <CardContent>
                 <Typography variant="h5" component="h2">
-                  You're like Lionel!
+                  You got Lionel!
                 </Typography>
                 <Typography>
-                  blurbblurbblurbblurbblurbblurbblurb
+                  Lionel is a watch-from-a-distance
                   <br />
-                  blurbblurbblurbblurbblurbblurb
+                  type of guy, even though
                   <br />
-                  blurbblurbblurbblurbblurbblurbblurbblurbblurb
-                  <br />
+                  his ideal place to live is very overcrowded...
                 </Typography>
               </CardContent>
             </CardActionArea>

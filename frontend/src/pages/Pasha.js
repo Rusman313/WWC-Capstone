@@ -48,16 +48,14 @@ class Pasha extends Component {
               ></CardMedia>
               <CardContent>
                 <Typography variant="h5" component="h2">
-                  You're like Pasha!
+                  You got Pasha!
                 </Typography>
                 <Typography>
-                  {" "}
-                  blurbblurbblurbblurbblurbblurbblurb
+                  Pasha could eat <b>a lot</b> of ice cream
                   <br />
-                  blurbblurbblurbblurbblurbblurb
+                  despite his karaoke song
                   <br />
-                  blurbblurbblurbblurbblurbblurbblurbblurbblurb
-                  <br />
+                  involving cheeseburgers. Suspicious...
                 </Typography>
               </CardContent>
             </CardActionArea>

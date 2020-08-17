@@ -48,14 +48,14 @@ class Kaley extends Component {
               ></CardMedia>
               <CardContent>
                 <Typography variant="h5" component="h2">
-                  You're like Kaley!
+                  You got Kaley!
                 </Typography>
                 <Typography>
-                  blurbblurbblurbblurbblurbblurbblurb
+                  While Kaley may be the most helpful
                   <br />
-                  blurbblurbblurbblurbblurbblurb
+                  in a tough situation, you might
                   <br />
-                  blurbblurbblurbblurbblurbblurbblurbblurbblurb
+                  catch her looking at cute animal pictures at work...
                   <br />
                 </Typography>
               </CardContent>
