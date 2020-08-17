@@ -26,7 +26,6 @@ class QuizComponent extends Component {
   handleChange = (event) => {
     let data = event.target.value.charAt(0);
     this.state.dataArray.push(data);
-    console.log(this.state.dataArray);
   };
   calculate = () => {
     let aScore = 0;
@@ -51,47 +50,31 @@ class QuizComponent extends Component {
         eScore++;
       }
     }
-    if (
-      aScore > bScore &&
-      aScore > cScore &&
-      aScore > dScore &&
-      aScore > eScore
-    ) {
-      document.location.href = "zach";
+
+    // scoring
+    let personality = ["Zach", "Lionel", "George", "Kaley", "Pasha"];
+    let score = [aScore, bScore, cScore, dScore, eScore];
+    let index = 0; //index of highest score. e.g. 0=>A, 1=>B, 2=>C, 3=>D, 4=>E
+    let highScore = score[0];
+    let tieIndex = -1; //indicates if there is a tie. -1 => no tie, >-1 => tie
+    for (let i = 1; i < score.length; i++) {
+      if (highScore < score[i]) {
+        index = i;
+        highScore = score[i];
+        tieIndex = -1;
+      } else if (highScore === score[i]) {
+        tieIndex = index;
+        index = i;
+        highScore = score[i];
+      }
     }
-    if (
-      bScore > aScore &&
-      bScore > cScore &&
-      bScore > dScore &&
-      bScore > eScore
-    ) {
-      document.location.href = "lionel";
+    if (tieIndex > -1) {
+      alert(
+        "A tie with: " + personality[index] + " and " + personality[tieIndex]
+      );
+    } else {
+      document.location.href = personality[index];
     }
-    if (
-      cScore > aScore &&
-      cScore > bScore &&
-      cScore > dScore &&
-      cScore > eScore
-    ) {
-      document.location.href = "george";
-    }
-    if (
-      dScore > aScore &&
-      dScore > bScore &&
-      dScore > cScore &&
-      dScore > eScore
-    ) {
-      document.location.href = "kaley";
-    }
-    if (
-      eScore > aScore &&
-      eScore > bScore &&
-      eScore > cScore &&
-      eScore > dScore
-    ) {
-      document.location.href = "pasha";
-    }
-    console.log(Math.max(aScore, bScore, cScore, dScore, eScore));
   };
   render() {
     return (

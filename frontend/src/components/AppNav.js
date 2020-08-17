@@ -15,7 +15,7 @@ class AppNav extends Component {
             </IconButton>
 
             <Typography edge="start" variant="h6" style={{ flexGrow: 1 }}>
-              Personality Quiz
+              WIN 2020 Personality Quiz
             </Typography>
             <Button
               color="inherit"
