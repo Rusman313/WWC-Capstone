@@ -68,10 +68,12 @@ class QuizComponent extends Component {
         highScore = score[i];
       }
     }
-    if (tieIndex > -1) {
+    if (tieIndex > -1 && index === 13) {
       alert(
         "A tie with: " + personality[index] + " and " + personality[tieIndex]
       );
+    } else if (index < 13) {
+      alert("Please complete the quiz");
     } else {
       document.location.href = personality[index];
     }
