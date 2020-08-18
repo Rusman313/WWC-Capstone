@@ -89,7 +89,7 @@ class QuizComponent extends Component {
           <h1>Questions List</h1>
           <div>
             {this.state.quiz.map((question) => (
-              <div style={{ width: 420 }}>
+              <div style={{ width: 420 }} key={question.id}>
                 <FormControl component="fieldset">
                   <FormLabel component="legend">
                     <Typography variant="h6" color="primary">
