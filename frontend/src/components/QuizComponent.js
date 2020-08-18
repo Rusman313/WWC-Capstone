@@ -54,6 +54,13 @@ class QuizComponent extends Component {
     // scoring
     let personality = ["Zach", "Lionel", "George", "Kaley", "Pasha"];
     let score = [aScore, bScore, cScore, dScore, eScore];
+    function getSum(a) {
+      var total = 0;
+      for (var i in a) {
+        total += a[i];
+      }
+      return total;
+    }
     let index = 0; //index of highest score. e.g. 0=>A, 1=>B, 2=>C, 3=>D, 4=>E
     let highScore = score[0];
     let tieIndex = -1; //indicates if there is a tie. -1 => no tie, >-1 => tie
@@ -68,11 +75,16 @@ class QuizComponent extends Component {
         highScore = score[i];
       }
     }
-    if (tieIndex > -1 && index === 13) {
+    if (tieIndex > -1 && getSum(score) === 13) {
       alert(
-        "A tie with: " + personality[index] + " and " + personality[tieIndex]
+        "You tied with " +
+          personality[index] +
+          " and " +
+          personality[tieIndex] +
+          ", please retake the quiz"
       );
-    } else if (index < 13) {
+      window.location.reload(true);
+    } else if (getSum(score) < 13) {
       alert("Please complete the quiz");
     } else {
       document.location.href = personality[index];
