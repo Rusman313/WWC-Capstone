@@ -100,7 +100,7 @@ class QuizComponent extends Component {
           alignItems="center"
           style={{ minHeight: "100vh" }}
         >
-          <h1>Questions List</h1>
+          <h1>Personality Quiz</h1>
           <div>
             {this.state.quiz.map((question) => (
               <div style={{ width: 420 }} key={question.id}>
